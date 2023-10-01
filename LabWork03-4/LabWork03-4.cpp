@@ -5,27 +5,27 @@
 // Варіант 11
 
 #include <iostream>
-#include <cmath>
+
 using namespace std;
-int main()
-{
+
+int main(){
 	double x; // вхідний аргумент
 	double y; // вхідний параметр
 	double R; // вхідний параметр
+
 	cout << "x = "; cin >> x;
 	cout << "y = "; cin >> y;
 	cout << "R = "; cin >> R;
 
-	y = 0 + (-R - 0) / (0 - (-R)) * (x * (-R));
-	// розгалуження в повній формі
-	if ((y <= 0 + (-R - 0) / (0 - (-R)) * (x * (-R))) || 
-		(y <= sqrt(pow(R, 2) - pow(x, 2)))) {
+	if (((y <= sqrt(pow(R, 2) - pow(x, 2)) && (y >= 0 && x >= 0)) || 
+		y >= (-R - 0) / (0 - (-R)) * (x - (-R)) && (x <= 0 && y <= 0))) {
 		cout << "yes" << endl;
+	}
+	else if (y < sqrt(9) * pow(3, 2)) {
+		cin >> x;
 	}
 	else {
 		cout << "no" << endl;
 	}
-
-	cin.get();
 	return 0;
 }
